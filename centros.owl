@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY centros "http://datos.gob.mx/def/sep/centros.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://datos.gob.mx/def/sep/centros.owl#"
+     xml:base="http://datos.gob.mx/def/sep/centros.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:centros="http://datos.gob.mx/def/sep/centros.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#coordenadas -->
+
+    <owl:ObjectProperty rdf:about="#coordenadas">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="#Geolocalizacion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#localizado -->
+
+    <owl:ObjectProperty rdf:about="#localizado">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="#Direccion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#proporciona -->
+
+    <owl:ObjectProperty rdf:about="#proporciona">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="#Servicio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#sustentado -->
+
+    <owl:ObjectProperty rdf:about="#sustentado">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="#Organismo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#ubicado -->
+
+    <owl:ObjectProperty rdf:about="#ubicado">
+        <rdfs:domain rdf:resource="#Direccion"/>
+        <rdfs:range rdf:resource="#Localidad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#ambito -->
+
+    <owl:DatatypeProperty rdf:about="#ambito">
+        <rdfs:domain rdf:resource="#Localidad"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#calle -->
+
+    <owl:DatatypeProperty rdf:about="#calle">
+        <rdfs:domain rdf:resource="#Direccion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#clave -->
+
+    <owl:DatatypeProperty rdf:about="#clave">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#codigo-portal -->
+
+    <owl:DatatypeProperty rdf:about="#codigo-portal">
+        <rdfs:domain rdf:resource="#Direccion"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#colonia -->
+
+    <owl:DatatypeProperty rdf:about="#colonia">
+        <rdfs:domain rdf:resource="#Direccion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#control -->
+
+    <owl:DatatypeProperty rdf:about="#control">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#direccion -->
+
+    <owl:DatatypeProperty rdf:about="#direccion">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#latitud -->
+
+    <owl:DatatypeProperty rdf:about="#latitud">
+        <rdfs:domain rdf:resource="#Geolocalizacion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#longitud -->
+
+    <owl:DatatypeProperty rdf:about="#longitud">
+        <rdfs:domain rdf:resource="#Geolocalizacion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#nivel -->
+
+    <owl:DatatypeProperty rdf:about="#nivel">
+        <rdfs:domain rdf:resource="#Servicio"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#nombre -->
+
+    <owl:DatatypeProperty rdf:about="#nombre">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#num-exterior -->
+
+    <owl:DatatypeProperty rdf:about="#num-exterior">
+        <rdfs:domain rdf:resource="#Direccion"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#subcontrol -->
+
+    <owl:DatatypeProperty rdf:about="#subcontrol">
+        <rdfs:domain rdf:resource="#Centro"/>
+        <rdfs:subPropertyOf rdf:resource="#control"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#subinvel -->
+
+    <owl:DatatypeProperty rdf:about="#subinvel">
+        <rdfs:domain rdf:resource="#Servicio"/>
+        <rdfs:subPropertyOf rdf:resource="#nivel"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#tipo -->
+
+    <owl:DatatypeProperty rdf:about="#tipo">
+        <rdfs:domain rdf:resource="#Servicio"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#turno -->
+
+    <owl:DatatypeProperty rdf:about="#turno">
+        <rdfs:domain rdf:resource="#Servicio"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#Centro -->
+
+    <owl:Class rdf:about="#Centro"/>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#Direccion -->
+
+    <owl:Class rdf:about="#Direccion"/>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#Geolocalizacion -->
+
+    <owl:Class rdf:about="#Geolocalizacion"/>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#Localidad -->
+
+    <owl:Class rdf:about="#Localidad"/>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#Organismo -->
+
+    <owl:Class rdf:about="#Organismo"/>
+    
+
+
+    <!-- http://datos.gob.mx/def/sep/centros.owl#Servicio -->
+
+    <owl:Class rdf:about="#Servicio"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
