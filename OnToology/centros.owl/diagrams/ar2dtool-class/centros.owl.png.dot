@@ -1,0 +1,30 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "centros:Servicio" "centros:Organismo" "centros:Localidad" "centros:Geolocalizacion" "centros:Direccion" "centros:Centro" ; /*classes style*/
+	"centros:subcontrol" -> "centros:control" [ label = "rdfs:subPropertyOf" ];
+	"centros:subinvel" -> "centros:nivel" [ label = "rdfs:subPropertyOf" ];
+	"centros2:exterior" -> "centros2:numero" [ label = "rdfs:subPropertyOf" ];
+	"centros:Servicio" -> "xsd:int" [ label = "centros:subinvel" ];
+	"centros:Centro" -> "xsd:string" [ label = "centros:subcontrol" ];
+	"centros:Localidad" -> "xsd:string" [ label = "centros:ambito" ];
+	"centros:Centro" -> "centros:Direccion" [ label = "centros:localizado" ];
+	"centros:Direccion" -> "centros:Localidad" [ label = "centros:ubicado" ];
+	"centros:Servicio" -> "xsd:int" [ label = "centros:nivel" ];
+	"centros:Centro" -> "centros:Organismo" [ label = "centros:sustentado" ];
+	"centros:Centro" -> "centros:Geolocalizacion" [ label = "centros:coordenadas" ];
+	"centros:Direccion" -> "xsd:int" [ label = "centros2:numero" ];
+	"centros:Servicio" -> "xsd:int" [ label = "centros:tipo" ];
+	"centros:Servicio" -> "xsd:string" [ label = "centros:turno" ];
+	"centros:Centro" -> "xsd:string" [ label = "centros:control" ];
+	"centros:Centro" -> "xsd:string" [ label = "centros:nombre" ];
+	"centros:Geolocalizacion" -> "xsd:string" [ label = "centros:longitud" ];
+	"centros:Direccion" -> "xsd:int" [ label = "centros:codigo-portal" ];
+	"centros:Centro" -> "xsd:string" [ label = "centros:clave" ];
+	"centros:Direccion" -> "xsd:string" [ label = "centros:colonia" ];
+	"centros:Direccion" -> "xsd:string" [ label = "centros:calle" ];
+	"centros:Centro" -> "centros:Servicio" [ label = "centros:proporciona" ];
+	"centros:Geolocalizacion" -> "xsd:string" [ label = "centros:latitud" ];
+	"centros:Centro" -> "xsd:string" [ label = "centros:direccion" ];
+
+}
