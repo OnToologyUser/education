@@ -6,6 +6,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY centros "http://datos.gob.mx/def/sep/centros.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY centros2 "http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#" >
 ]>
 
 
@@ -16,8 +17,58 @@
      xmlns:centros="http://datos.gob.mx/def/sep/centros.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about=""/>
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:centros2="http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#">
+    <owl:Ontology rdf:about="http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl">
+        <centros2:issued rdf:datatype="&xsd;dateTime">2015-07-30</centros2:issued>
+        <centros2:date rdf:datatype="&xsd;dateTime">2015-07-30</centros2:date>
+        <rdfs:comment rdf:datatype="&xsd;anyURI">Ontología sobre el Catálogo de Centros de Trabajo, Censo de Escuelas, Maestros y Alumnos de Educación Básica y Especial. Matrícula por Institución y Entidad Federativa por clave de centro de trabajo.</rdfs:comment>
+        <centros2:identifier rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</centros2:identifier>
+        <owl:versionInfo xml:lang="es">Esta es la primera versión del vocabulario, propuesta a revisión por las entidades correspondientes.</owl:versionInfo>
+        <centros2:creator>ITESM</centros2:creator>
+        <centros2:title xml:lang="es">Vocabulario para la representación de datos sobre Centros escolares de educación de la Secretaría de Educación Pública (SEP).</centros2:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#creator -->
+
+    <owl:AnnotationProperty rdf:about="&centros2;creator"/>
+    
+
+
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#date -->
+
+    <owl:AnnotationProperty rdf:about="&centros2;date"/>
+    
+
+
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#identifier -->
+
+    <owl:AnnotationProperty rdf:about="&centros2;identifier"/>
+    
+
+
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#issued -->
+
+    <owl:AnnotationProperty rdf:about="&centros2;issued"/>
+    
+
+
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#title -->
+
+    <owl:AnnotationProperty rdf:about="&centros2;title"/>
     
 
 
@@ -34,45 +85,45 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#coordenadas -->
 
-    <owl:ObjectProperty rdf:about="#coordenadas">
-        <rdfs:domain rdf:resource="#Centro"/>
-        <rdfs:range rdf:resource="#Geolocalizacion"/>
+    <owl:ObjectProperty rdf:about="&centros;coordenadas">
+        <rdfs:domain rdf:resource="&centros;Centro"/>
+        <rdfs:range rdf:resource="&centros;Geolocalizacion"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#localizado -->
 
-    <owl:ObjectProperty rdf:about="#localizado">
-        <rdfs:domain rdf:resource="#Centro"/>
-        <rdfs:range rdf:resource="#Direccion"/>
+    <owl:ObjectProperty rdf:about="&centros;localizado">
+        <rdfs:domain rdf:resource="&centros;Centro"/>
+        <rdfs:range rdf:resource="&centros;Direccion"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#proporciona -->
 
-    <owl:ObjectProperty rdf:about="#proporciona">
-        <rdfs:domain rdf:resource="#Centro"/>
-        <rdfs:range rdf:resource="#Servicio"/>
+    <owl:ObjectProperty rdf:about="&centros;proporciona">
+        <rdfs:domain rdf:resource="&centros;Centro"/>
+        <rdfs:range rdf:resource="&centros;Servicio"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#sustentado -->
 
-    <owl:ObjectProperty rdf:about="#sustentado">
-        <rdfs:domain rdf:resource="#Centro"/>
-        <rdfs:range rdf:resource="#Organismo"/>
+    <owl:ObjectProperty rdf:about="&centros;sustentado">
+        <rdfs:domain rdf:resource="&centros;Centro"/>
+        <rdfs:range rdf:resource="&centros;Organismo"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#ubicado -->
 
-    <owl:ObjectProperty rdf:about="#ubicado">
-        <rdfs:domain rdf:resource="#Direccion"/>
-        <rdfs:range rdf:resource="#Localidad"/>
+    <owl:ObjectProperty rdf:about="&centros;ubicado">
+        <rdfs:domain rdf:resource="&centros;Direccion"/>
+        <rdfs:range rdf:resource="&centros;Localidad"/>
     </owl:ObjectProperty>
     
 
@@ -88,10 +139,31 @@
     
 
 
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#exterior -->
+
+    <owl:DatatypeProperty rdf:about="&centros2;exterior">
+        <rdfs:subPropertyOf rdf:resource="&centros2;numero"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://datos.gob.mx/datosabiertos/def/education/sep/centros.owl#numero -->
+
+    <owl:DatatypeProperty rdf:about="&centros2;numero">
+        <rdfs:label xml:lang="es">número</rdfs:label>
+        <rdfs:comment xml:lang="es">Número de la calle perteneciente a la dirección del centro de trabajo</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Direccion"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://datos.gob.mx/def/sep/centros.owl#ambito -->
 
-    <owl:DatatypeProperty rdf:about="#ambito">
-        <rdfs:domain rdf:resource="#Localidad"/>
+    <owl:DatatypeProperty rdf:about="&centros;ambito">
+        <rdfs:label xml:lang="es">ámbito</rdfs:label>
+        <rdfs:comment>Ámbito: Rural o Urbano</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Localidad"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -99,8 +171,9 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#calle -->
 
-    <owl:DatatypeProperty rdf:about="#calle">
-        <rdfs:domain rdf:resource="#Direccion"/>
+    <owl:DatatypeProperty rdf:about="&centros;calle">
+        <rdfs:label xml:lang="es">calle</rdfs:label>
+        <rdfs:domain rdf:resource="&centros;Direccion"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -108,8 +181,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#clave -->
 
-    <owl:DatatypeProperty rdf:about="#clave">
-        <rdfs:domain rdf:resource="#Centro"/>
+    <owl:DatatypeProperty rdf:about="&centros;clave">
+        <rdfs:label xml:lang="es">clave</rdfs:label>
+        <rdfs:comment xml:lang="es">Clave alfanumérica del centro de trabajo</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Centro"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -117,8 +192,9 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#codigo-portal -->
 
-    <owl:DatatypeProperty rdf:about="#codigo-portal">
-        <rdfs:domain rdf:resource="#Direccion"/>
+    <owl:DatatypeProperty rdf:about="&centros;codigo-portal">
+        <rdfs:label xml:lang="es">código postal</rdfs:label>
+        <rdfs:domain rdf:resource="&centros;Direccion"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -126,8 +202,9 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#colonia -->
 
-    <owl:DatatypeProperty rdf:about="#colonia">
-        <rdfs:domain rdf:resource="#Direccion"/>
+    <owl:DatatypeProperty rdf:about="&centros;colonia">
+        <rdfs:label xml:lang="es">colonia</rdfs:label>
+        <rdfs:domain rdf:resource="&centros;Direccion"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -135,8 +212,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#control -->
 
-    <owl:DatatypeProperty rdf:about="#control">
-        <rdfs:domain rdf:resource="#Centro"/>
+    <owl:DatatypeProperty rdf:about="&centros;control">
+        <rdfs:label xml:lang="es">control</rdfs:label>
+        <rdfs:comment xml:lang="es">Control: Público o Privado</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Centro"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -144,8 +223,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#direccion -->
 
-    <owl:DatatypeProperty rdf:about="#direccion">
-        <rdfs:domain rdf:resource="#Centro"/>
+    <owl:DatatypeProperty rdf:about="&centros;direccion">
+        <rdfs:label xml:lang="es">dirección</rdfs:label>
+        <rdfs:comment xml:lang="es">dirección del centro de trabajo</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Centro"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -153,8 +234,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#latitud -->
 
-    <owl:DatatypeProperty rdf:about="#latitud">
-        <rdfs:domain rdf:resource="#Geolocalizacion"/>
+    <owl:DatatypeProperty rdf:about="&centros;latitud">
+        <rdfs:label xml:lang="es">latitud</rdfs:label>
+        <rdfs:comment xml:lang="es">coordenadas geográficas latitud</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Geolocalizacion"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -162,8 +245,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#longitud -->
 
-    <owl:DatatypeProperty rdf:about="#longitud">
-        <rdfs:domain rdf:resource="#Geolocalizacion"/>
+    <owl:DatatypeProperty rdf:about="&centros;longitud">
+        <rdfs:comment xml:lang="es">coordenada geográfica longitud</rdfs:comment>
+        <rdfs:comment xml:lang="es">longitud</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Geolocalizacion"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -171,8 +256,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#nivel -->
 
-    <owl:DatatypeProperty rdf:about="#nivel">
-        <rdfs:domain rdf:resource="#Servicio"/>
+    <owl:DatatypeProperty rdf:about="&centros;nivel">
+        <rdfs:label xml:lang="es">nivel</rdfs:label>
+        <rdfs:comment xml:lang="es">Nivel escolar: preescolar, primaria, secundaria, bachillerato, especial, entre otros.</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Servicio"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -180,27 +267,22 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#nombre -->
 
-    <owl:DatatypeProperty rdf:about="#nombre">
-        <rdfs:domain rdf:resource="#Centro"/>
+    <owl:DatatypeProperty rdf:about="&centros;nombre">
+        <rdfs:label xml:lang="es">nombre</rdfs:label>
+        <rdfs:comment xml:lang="es">nombre del centro de trabajo</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Centro"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://datos.gob.mx/def/sep/centros.owl#num-exterior -->
-
-    <owl:DatatypeProperty rdf:about="#num-exterior">
-        <rdfs:domain rdf:resource="#Direccion"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#subcontrol -->
 
-    <owl:DatatypeProperty rdf:about="#subcontrol">
-        <rdfs:domain rdf:resource="#Centro"/>
-        <rdfs:subPropertyOf rdf:resource="#control"/>
+    <owl:DatatypeProperty rdf:about="&centros;subcontrol">
+        <rdfs:label xml:lang="es">subcontrol</rdfs:label>
+        <rdfs:comment xml:lang="es">Subcontrol: Estatal, Federal, Particular, Autónomo o Subsidiado</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Centro"/>
+        <rdfs:subPropertyOf rdf:resource="&centros;control"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -208,9 +290,11 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#subinvel -->
 
-    <owl:DatatypeProperty rdf:about="#subinvel">
-        <rdfs:domain rdf:resource="#Servicio"/>
-        <rdfs:subPropertyOf rdf:resource="#nivel"/>
+    <owl:DatatypeProperty rdf:about="&centros;subinvel">
+        <rdfs:label xml:lang="es">subnivel</rdfs:label>
+        <rdfs:comment xml:lang="es">Subnivel escolar: preescolar general, primaria general, primaria indígena, telesecundaria, entre otros.</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Servicio"/>
+        <rdfs:subPropertyOf rdf:resource="&centros;nivel"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -218,8 +302,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#tipo -->
 
-    <owl:DatatypeProperty rdf:about="#tipo">
-        <rdfs:domain rdf:resource="#Servicio"/>
+    <owl:DatatypeProperty rdf:about="&centros;tipo">
+        <rdfs:label xml:lang="es">tipo</rdfs:label>
+        <rdfs:comment xml:lang="es">Nivel de educación: Educación básica, educación media superior, educación especial, educación inicial, educación superior, entre otros.</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Servicio"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -227,8 +313,10 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#turno -->
 
-    <owl:DatatypeProperty rdf:about="#turno">
-        <rdfs:domain rdf:resource="#Servicio"/>
+    <owl:DatatypeProperty rdf:about="&centros;turno">
+        <rdfs:label xml:lang="es">turno</rdfs:label>
+        <rdfs:comment xml:lang="es">Turno de horario del centro de trabajo: matutino, vespertino, nocturno, entre otros.</rdfs:comment>
+        <rdfs:domain rdf:resource="&centros;Servicio"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -247,40 +335,64 @@
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#Centro -->
 
-    <owl:Class rdf:about="#Centro"/>
+    <owl:Class rdf:about="&centros;Centro">
+        <rdfs:label xml:lang="es">Centro</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Centros escolares de Educación Básica, Media Superior, Superior, Especial, Inicial y Formación para el Trabajo con sus características básicas relativas a su situación geográfica y administrativa.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#Direccion -->
 
-    <owl:Class rdf:about="#Direccion"/>
+    <owl:Class rdf:about="&centros;Direccion">
+        <rdfs:label xml:lang="es">Dirección</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Dirección del centro de trabajo (domicilio, número exterior, entre calle y calle, código postal)</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#Geolocalizacion -->
 
-    <owl:Class rdf:about="#Geolocalizacion"/>
+    <owl:Class rdf:about="&centros;Geolocalizacion">
+        <rdfs:label xml:lang="es">Geolocalización</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Localización georeferenciada sobre las coordenas (longitud y latitud) del centro de trabajo</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#Localidad -->
 
-    <owl:Class rdf:about="#Localidad"/>
+    <owl:Class rdf:about="&centros;Localidad">
+        <rdfs:label xml:lang="es">Localidad</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Localidad a la que pertence el centro de trabajo (entidad y municipio)</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#Organismo -->
 
-    <owl:Class rdf:about="#Organismo"/>
+    <owl:Class rdf:about="&centros;Organismo">
+        <rdfs:label xml:lang="es">Organismo</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Organismo descentralizado de la secretaria de educación pública.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://datos.gob.mx/def/sep/centros.owl#Servicio -->
 
-    <owl:Class rdf:about="#Servicio"/>
+    <owl:Class rdf:about="&centros;Servicio">
+        <rdfs:label xml:lang="es">Servicio</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://datos.gob.mx/datosabiertos/def/education/sep/centros</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Servicio proporcionado en el centro de trabajo</rdfs:comment>
+    </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
